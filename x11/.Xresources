@@ -1,0 +1,39 @@
+URxvt*background: [95]#080911
+URxvt*foreground: #feffff
+URxvt*cursorColor: #fa7518
+URxvt*depth: 32
+
+URxvt*color0: #293033
+URxvt*color1: #af3212
+URxvt*color2: #009f12
+URxvt*color3: #d78720
+URxvt*color4: #5f5faf
+URxvt*color5: #af30c3
+URxvt*color6: #20d4df
+URxvt*color7: #c0ccdc
+URxvt*color8: #5f6a70
+URxvt*color9: #ff4135
+URxvt*color10: #44eb58
+URxvt*color11: #ffdf58
+URxvt*color12: #9bafff
+URxvt*color13: #af87d7
+URxvt*color14: #77faff
+URxvt*color15: #fdfcff
+
+URxvt*font: -xos4-terminus-medium-r-normal--18-180-72-72-c-100-iso10646-1
+URxvt*boldFont:
+URxvt*italicFont:
+URxvt*scrollBar: false
+
+URxvt.keysym.Shift-Control-V: eval:paste_clipboard
+URxvt.keysym.Shift-Control-C: eval:selection_to_clipboard
+URxvt.iso14755: false
+URxvt.iso14755_52: false
+
+Xft.dpi: 96
+Xft.antialias: 1
+Xft.hinting: 1
+Xft.hintstyle: hintslight
+Xft.lcdfilter: lcddefault
+Xft.rgba: rgb
+Xft.autohint: 0
