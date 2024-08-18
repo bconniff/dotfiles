@@ -5,7 +5,7 @@ if exists("syntax_on")
     syntax reset
 endif
 
-let g:colors_name = 'bc'
+let g:colors_name = 'nox'
 
 if has("gui_running")
     hi! Cursor guibg=#fa7518 gui=none
