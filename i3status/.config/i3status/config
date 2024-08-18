@@ -1,0 +1,58 @@
+general {
+    output_format = "i3bar"
+    interval = 5
+    colors = true
+    color_good = "#44eb58"
+    color_bad = "#ff4135"
+    color_degraded = "#ffdf58"
+    color_separator = "#5f6a70"
+    separator = " | "
+}
+
+order += "disk /"
+order += "disk /home"
+order += "disk /mnt/hd"
+order += "wireless wlan0"
+order += "ethernet eth0"
+order += "memory"
+order += "time"
+
+wireless wlan0 {
+    format_up = "%essid %ip (%quality @ %bitrate)"
+    format_down = "wifi DOWN"
+    format_quality = "%d%s"
+}
+
+ethernet eth0 {
+    format_up = "eth %ip (%speed)"
+    format_down = "eth DOWN"
+}
+
+time {
+    format = "now %m/%d @ %H:%M"
+}
+
+memory {
+    format = "mem %free"
+}
+
+disk "/" {
+    format = "/ %free"
+    prefix_type = "custom"
+    low_threshold = 25
+    threshold_type = "percentage_free"
+}
+
+disk "/home" {
+    format = "/home %free"
+    prefix_type = "custom"
+    low_threshold = 25
+    threshold_type = "percentage_free"
+}
+
+disk "/mnt/hd" {
+    format = "/mnt/hd %free"
+    prefix_type = "custom"
+    low_threshold = 25
+    threshold_type = "percentage_free"
+}
