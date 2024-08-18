@@ -21,7 +21,7 @@ set laststatus=2
 set noswapfile
 set mouse=a
 
-colo bc
+colo nox
 
 set statusline=
 set statusline+=\ %n              "buffer number

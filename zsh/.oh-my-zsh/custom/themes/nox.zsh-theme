@@ -2,13 +2,13 @@
 
 setopt prompt_subst
 
-function __prompt__is_ssh {
-  which pstree >/dev/null 2>&1 && pstree -s $$ | grep -qE '\bsshd\b'>/dev/null 2>&1
+function __prompt__is_remote {
+    [[ $TERM = screen ]] || [[ $TERM = tmux-* ]] || [[ $SSH_CLIENT ]]
 }
 
-function __prompt__ssh_status {
-  if __prompt__is_ssh; then
-    echo "%B%F{yellow}@$(hostname -s) "
+function __prompt__host {
+  if __prompt__is_remote; then
+    echo "%B%F{yellow}@$(hostname -s)"
   fi
 }
 
@@ -107,17 +107,19 @@ function __prompt__sigil {
   integer e=$?
   if (( $e )); then
     echo "%B%F{red}*"
-  elif __prompt__is_ssh; then
-    echo "%B%F{yellow}-"
   elif (( $UID )); then
-    echo "%B%F{black}%%"
+    if __prompt__is_remote; then
+      echo "%B%F{yellow}%%"
+    else
+      echo "%B%F{black}%%"
+    fi
   else
     echo "%B%F{red}#"
   fi
 }
 
 function precmd {
-  print -rP $'\n''$(__prompt__error_code)$(__prompt__ssh_status)$(__prompt__user) %F{blue}$(__prompt__cwd)%f$(__prompt__git_status)%b%f'
+  print -rP $'\n''$(__prompt__error_code)$(__prompt__user)$(__prompt__host) %F{blue}$(__prompt__cwd)%f$(__prompt__git_status)%b%f'
 }
 
 PROMPT='$(__prompt__sigil)%b%f '
