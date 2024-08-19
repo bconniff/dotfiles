@@ -1,10 +1,8 @@
-set rtp+=/usr/share/doc/fzf/examples/
+set rtp+=~/.vim/bundle/fzf
 set rtp+=~/.vim/bundle/fzf.vim
 set rtp+=~/.vim/bundle/supertab
 set rtp+=~/.vim/bundle/salesforce-vim
 set rtp+=~/.vim/bundle/editorconfig-vim
-
-set directory=/tmp
 
 let $FZF_DEFAULT_COMMAND='ag -g ""'
 
@@ -18,7 +16,6 @@ set bs=2
 set wildchar=<Tab> wildmenu wildmode=full
 set hidden
 set laststatus=2
-set noswapfile
 set mouse=a
 
 colo nox
@@ -52,13 +49,16 @@ let g:SuperTabDefaultCompletionType='context'
 let &t_SI = "\e[6 q"
 let &t_EI = "\e[2 q"
 
-" reset the cursor on start (for older versions of vim, usually not required)
-"autocmd VimEnter * silent !echo -ne "\e[2 q"
-
 set timeoutlen=1000
 set ttimeoutlen=1
 
 let g:fzf_layout = { 'down': '40%' }
+
+for d in [ "backup", "swap", "undo" ]
+    if !isdirectory($HOME . "/.vim/" . d)
+        call mkdir($HOME . "/.vim/" . d, "p")
+    endif
+endfor
 
 set backupdir=~/.vim/backup
 set directory=~/.vim/swap
