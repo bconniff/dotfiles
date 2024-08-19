@@ -75,13 +75,11 @@ ZSH_CUSTOM="$HOME/.zsh"
 plugins=(
     vi-mode
     git
-    git-auto-fetch
     sfdx
     fzf
     colored-man-pages
     zsh-syntax-highlighting
     zsh-autosuggestions
-    web-search
     p
 )
 
