@@ -129,4 +129,6 @@ alias agi='ag -i'
 alias agil='ag -il'
 alias agio='agi --noheading --nofilename --nonumber --nobreak -o'
 
-[[ -f ~/.zshrc.local ]] && source ~/.zshrc.local
+if [[ -f ~/.zshrc.local ]]; then
+    source ~/.zshrc.local
+fi
