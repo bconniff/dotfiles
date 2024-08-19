@@ -8,7 +8,7 @@ function __prompt__is_remote {
 
 function __prompt__host {
   if __prompt__is_remote; then
-    echo "%B%F{yellow}@$(hostname -s)"
+    echo "%B%F{black}:%F{cyan}$(hostname -s)"
   fi
 }
 
@@ -108,11 +108,7 @@ function __prompt__sigil {
   if (( $e )); then
     echo "%B%F{red}*"
   elif (( $UID )); then
-    if __prompt__is_remote; then
-      echo "%B%F{yellow}%%"
-    else
-      echo "%B%F{black}%%"
-    fi
+    echo "%B%F{black}%%"
   else
     echo "%B%F{red}#"
   fi
