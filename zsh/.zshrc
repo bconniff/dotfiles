@@ -1,13 +1,10 @@
 # If you come from bash you might have to change your $PATH.
-export PATH="$HOME/.bin:$HOME/.npm/bin:$HOME/.rustup/toolchains/stable-x86_64-unknown-linux-gnu/bin:$HOME/.local/bin:$PATH"
+export PATH="$HOME/.bin:$PATH"
 
 # Path to your oh-my-zsh installation.
 export ZSH="$HOME/.oh-my-zsh"
 
 export TERMINAL=urxvt256c
-
-export CARGO_HOME="$HOME/.cargo"
-export RUSTUP_HOME="$HOME/.rustup"
 
 # Set name of the theme to load --- if set to "random", it will
 # load a random theme each time oh-my-zsh is loaded, in which case,
@@ -132,11 +129,4 @@ alias agi='ag -i'
 alias agil='ag -il'
 alias agio='agi --noheading --nofilename --nonumber --nobreak -o'
 
-# slackware
-alias sbopkg='sudo -i sbopkg'
-alias slackpkg='sudo slackpkg'
-alias installpkg='sudo installpkg'
-alias upgradepkg='sudo upgradepkg'
-alias removepkg='sudo removepkg'
-alias sqg='sudo sqg'
-alias slpkg='sudo -i slpkg'
+[[ -f ~/.zshrc.local ]] && source ~/.zshrc.local
