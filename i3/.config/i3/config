@@ -227,6 +227,6 @@ for_window [all] title_format "%class :: %title"
 
 for_window [class="^feh$"] floating enable, fullscreen enable
 for_window [class="^firefox$"] border pixel 2
-for_window [class="^mpv$"] floating enable, fullscreen enable
+for_window [class="^mpv$"] floating enable
 
 workspace_layout stacking

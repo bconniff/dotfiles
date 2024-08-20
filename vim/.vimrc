@@ -1,4 +1,3 @@
-set rtp+=~/.vim/bundle/fzf
 set rtp+=~/.vim/bundle/fzf.vim
 set rtp+=~/.vim/bundle/supertab
 set rtp+=~/.vim/bundle/salesforce-vim
@@ -69,6 +68,28 @@ function! SynGroup()
     let l:s = synID(line('.'), col('.'), 1)
     echo synIDattr(l:s, 'name') . ' -> ' . synIDattr(synIDtrans(l:s), 'name')
 endfun
+
+function! FindFzf()
+    if !exists('g:loaded_fzf')
+        return ""
+    endif
+
+    let l:fzfdetect = [ 'dpkg -L fzf', 'brew list fzf' ]
+    for x in fzfdetect
+        for path in split(system(x), "\n")
+            if path =~ "/fzf[.]vim$"
+                return fnamemodify(path, ':h')
+            endif
+        endfor
+    endfor
+
+    return ""
+endfunction
+
+let fzfpath = FindFzf()
+if !empty(fzfpath)
+    let &runtimepath .= (empty(&runtimepath) ? '' : ',') . fzfpath
+endif
 
 if filereadable($HOME . "/.vimrc.local")
     source ~/.vimrc.local
