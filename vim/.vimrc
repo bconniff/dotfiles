@@ -70,7 +70,7 @@ function! SynGroup()
 endfun
 
 function! FindFzf()
-    if !exists('g:loaded_fzf')
+    if exists('g:loaded_fzf')
         return ""
     endif
 
