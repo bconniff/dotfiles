@@ -4,7 +4,7 @@ set rtp+=~/.vim/bundle/supertab
 set rtp+=~/.vim/bundle/salesforce-vim
 set rtp+=~/.vim/bundle/editorconfig-vim
 
-let $FZF_DEFAULT_COMMAND='ag -g ""'
+let $FZF_DEFAULT_COMMAND='ag -g "" || :'
 
 syntax on
 filetype plugin on
@@ -52,7 +52,8 @@ let &t_EI = "\e[2 q"
 set timeoutlen=1000
 set ttimeoutlen=1
 
-let g:fzf_layout = { 'down': '40%' }
+let g:fzf_layout = { 'down': '75%' }
+let g:fzf_preview_window = ['up:5']
 
 for d in [ "backup", "swap", "undo" ]
     if !isdirectory($HOME . "/.vim/" . d)
