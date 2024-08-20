@@ -69,26 +69,18 @@ function! SynGroup()
     echo synIDattr(l:s, 'name') . ' -> ' . synIDattr(synIDtrans(l:s), 'name')
 endfun
 
-function! FindFzf()
-    if exists('g:loaded_fzf')
-        return ""
-    endif
+if !exists('g:loaded_fzf')
+    let fzfdetect = [
+        \ '/usr/share/doc/fzf/examples/plugin',
+        \ '/usr/local/opt/fzf/plugin'
+        \ ]
 
-    let l:fzfdetect = [ 'dpkg -L fzf', 'brew list fzf' ]
     for x in fzfdetect
-        for path in split(system(x), "\n")
-            if path =~ "/fzf[.]vim$"
-                return fnamemodify(path, ':h')
-            endif
-        endfor
+        if isdirectory(x)
+            let &runtimepath .= (empty(&runtimepath) ? '' : ',') . x
+            break
+        endif
     endfor
-
-    return ""
-endfunction
-
-let fzfpath = FindFzf()
-if !empty(fzfpath)
-    let &runtimepath .= (empty(&runtimepath) ? '' : ',') . fzfpath
 endif
 
 if filereadable($HOME . "/.vimrc.local")
