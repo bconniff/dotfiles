@@ -1,0 +1,126 @@
+* {
+    border-color: #293033;
+    shade-color: #5f5faf;
+    background-color: #9baffff0;
+    separator-color: #fa7518;
+    normal-color: #c0ccdc;
+    selected-color: #ffdf58;
+    urgent-color: #ff4135;
+    white-color: #fdfcff;
+}
+
+window {
+    border-color:     @border-color;
+    border-radius: 8px;
+    background-color: @background-color;
+    border:           4px;
+    padding:          20px;
+    spacing:          0;
+
+    anchor:         north;
+    location:       center;
+    y-offset:       -15.5em;
+
+    children: [ inputbar, listview ];
+}
+
+wrapper-mode-switcher {
+    background-color: transparent;
+    orientation: horizontal;
+    expand:     false;
+    spacing:    0;
+    children: [ mode-switcher ];
+}
+
+mode-switcher {
+    background-color: transparent;
+    spacing: 0;
+    expand: true;
+}
+
+button {
+    background-color: transparent;
+    padding:      4px;
+    border:       0px 0px 8px ;
+    border-color: @shade-color;
+}
+
+button selected {
+    text-color: @white-color;
+    background-color: @shade-color;
+
+    border-radius: 4px 4px 0 0;
+    border:       0px 0px 8px ;
+    border-color: @shade-color;
+}
+
+
+sidebar {
+    expand: false;
+}
+
+listview {
+    lines: 16;
+    background-color: @shade-color;
+    border-radius: 4px;
+    spacing:      0;
+    scrollbar:    false;
+    padding:      8px;
+
+    expand:       true;
+    border-color: @shade-color;
+}
+
+element {
+    background-color: transparent;
+    padding: 4px;
+    text-color: @normal-color;
+}
+
+element-text {
+    background-color: transparent;
+    text-color: inherit;
+}
+
+element urgent {
+    text-color: @urgent-color;
+}
+
+element active {
+    text-color: @urgent-color;
+}
+
+element selected {
+    background-color: @separator-color;
+    text-color:       @border-color;
+    border-radius: 2px;
+}
+
+scrollbar {
+    width:        4px ;
+    border:       0;
+    handle-width: 8px ;
+    padding:      0;
+}
+sidebar {
+    border:       2px 0px 0px ;
+    border-color: @separator-color;
+}
+inputbar {
+    background-color: transparent;
+    text-color: @normal-color;
+    padding: 0px 0px 8px;
+    children: [ prompt, entry ];
+}
+prompt {
+    background-color: transparent;
+    padding: 8px;
+}
+
+entry {
+    padding: 8px;
+    border: 0;
+    background-color: @normal-color;
+    vertical-align: 0.5;
+    border-radius: 4px;
+}

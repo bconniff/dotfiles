@@ -82,8 +82,8 @@ bindsym $mod+k focus up
 bindsym $mod+l focus right
 
 # alternatively, you can use the cursor keys:
-bindsym $mod+Left workspace next
-bindsym $mod+Right workspace prev
+bindsym $mod+Right workspace next
+bindsym $mod+Left workspace prev
 
 # move focused window
 bindsym $mod+Shift+h move left

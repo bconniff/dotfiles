@@ -1,0 +1,16 @@
+
+configuration {
+    modes: "window,run,calc,ssh";
+    font: "terminus 12";
+}
+timeout {
+    action: "kb-cancel";
+    delay:  0;
+}
+filebrowser {
+    directories-first: true;
+    sorting-method:    "name";
+}
+
+//@theme "solarized_alternate"
+@theme "nox"
