@@ -61,13 +61,15 @@ bindsym $mod+n exec urxvt256c
 bindsym $mod+Shift+q kill
 
 # start dmenu (a program launcher)
-bindsym $mod+d exec --no-startup-id dmenu_run \
-    -l 5 \
-    -fn 'terminus-12' \
-    -nb '#081011' \
-    -nf '#feffff' \
-    -sb '#fa7518' \
-    -sf '#293033'
+#bindsym $mod+d exec --no-startup-id dmenu_run \
+#    -l 5 \
+#    -fn 'terminus-12' \
+#    -nb '#081011' \
+#    -nf '#feffff' \
+#    -sb '#fa7518' \
+#    -sf '#293033'
+
+bindsym $mod+d exec --no-startup-id rofi -show run
 
 # A more modern dmenu replacement is rofi:
 # bindcode $mod+40 exec "rofi -modi drun,run -show drun"
@@ -194,6 +196,7 @@ bar {
     status_command i3status
     separator_symbol " | "
     i3bar_command i3bar -t
+    position top
 
     padding 0 10px
 
