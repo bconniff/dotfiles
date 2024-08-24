@@ -11,10 +11,10 @@
 
 window {
     border-color:     @border-color;
-    border-radius: 8px;
+    border-radius: 4px;
     background-color: @background-color;
-    border:           4px;
-    padding:          20px;
+    border:           2px;
+    padding:          8px;
     spacing:          0;
 
     anchor:         north;
