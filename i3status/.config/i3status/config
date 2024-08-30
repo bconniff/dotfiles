@@ -14,6 +14,7 @@ order += "disk /home"
 order += "disk /mnt/hd"
 order += "wireless wlan0"
 order += "ethernet eth0"
+order += "ethernet wg0"
 order += "memory"
 order += "time"
 
@@ -26,6 +27,11 @@ wireless wlan0 {
 ethernet eth0 {
     format_up = "eth %ip (%speed)"
     format_down = "eth DOWN"
+}
+
+ethernet wg0 {
+    format_up = "wg0 %ip"
+    format_down = "wg0 DOWN"
 }
 
 time {
