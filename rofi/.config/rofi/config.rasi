@@ -12,5 +12,4 @@ filebrowser {
     sorting-method:    "name";
 }
 
-//@theme "solarized_alternate"
-@theme "inox"
+@theme "nox"

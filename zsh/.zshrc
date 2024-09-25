@@ -122,6 +122,7 @@ alias la='ls -A'
 alias agi='ag -i'
 alias agil='ag -il'
 alias agio='agi --noheading --nofilename --nonumber --nobreak -o'
+alias ta='tmux a || tmux'
 
 if [[ -f ~/.zshrc.local ]]; then
     source ~/.zshrc.local

@@ -51,8 +51,8 @@ let &t_EI = "\e[2 q"
 set timeoutlen=1000
 set ttimeoutlen=1
 
-let g:fzf_layout = { 'down': '75%' }
-let g:fzf_preview_window = ['up:5']
+let g:fzf_layout = { 'down': '40%' }
+let g:fzf_preview_window = []
 
 for d in [ "backup", "swap", "undo" ]
     if !isdirectory($HOME . "/.vim/" . d)

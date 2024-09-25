@@ -1,7 +1,9 @@
 * {
-    border-color: #293033;
-    shade-color: #5f5faf;
-    background-color: #9baffff0;
+    background-color: #293033;
+//    shade-color: #5f5faf;
+    shade-color: #5f6a70;
+//    shade-color: #080911;
+    border-color: #9baffff0;
     separator-color: #fa7518;
     normal-color: #c0ccdc;
     selected-color: #ffdf58;
@@ -11,7 +13,7 @@
 
 window {
     border-color:     @border-color;
-    border-radius: 4px;
+    border-radius: 1px;
     background-color: @background-color;
     border:           2px;
     padding:          8px;
@@ -49,7 +51,7 @@ button selected {
     text-color: @white-color;
     background-color: @shade-color;
 
-    border-radius: 4px 4px 0 0;
+    border-radius: 2px 2px 0 0;
     border:       0px 0px 8px ;
     border-color: @shade-color;
 }
@@ -62,7 +64,7 @@ sidebar {
 listview {
     lines: 16;
     background-color: @shade-color;
-    border-radius: 4px;
+    border-radius: 2px;
     spacing:      0;
     scrollbar:    false;
     padding:      8px;
@@ -80,6 +82,7 @@ element {
 element-text {
     background-color: transparent;
     text-color: inherit;
+    highlight: underline;
 }
 
 element urgent {
@@ -92,7 +95,7 @@ element active {
 
 element selected {
     background-color: @separator-color;
-    text-color:       @border-color;
+    text-color:       @background-color;
     border-radius: 2px;
 }
 
@@ -115,6 +118,7 @@ inputbar {
 prompt {
     background-color: transparent;
     padding: 8px;
+    text-color: @white-color;
 }
 
 entry {
