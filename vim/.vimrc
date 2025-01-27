@@ -1,4 +1,5 @@
 set rtp+=~/.vim/bundle/fzf.vim
+set rtp+=~/.vim/bundle/json5.vim
 set rtp+=~/.vim/bundle/supertab
 set rtp+=~/.vim/bundle/vim-svelte
 set rtp+=~/.vim/bundle/salesforce-vim

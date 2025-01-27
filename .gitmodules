@@ -19,3 +19,6 @@
 [submodule "zsh/.zsh/plugins/zsh-syntax-highlighting"]
 	path = zsh/.zsh/plugins/zsh-syntax-highlighting
 	url = https://github.com/zsh-users/zsh-syntax-highlighting.git
+[submodule "vim/.vim/bundle/json5.vim"]
+	path = vim/.vim/bundle/json5.vim
+	url = https://github.com/gutenye/json5.vim
