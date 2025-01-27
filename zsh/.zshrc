@@ -4,11 +4,11 @@ autoload -Uz compinit && compinit
 
 # plugins
 declare -a plugins=(
-    ~/.zsh/plugins/vi-mode/vi-mode.plugin.zsh
+    ~/.zsh/plugins/vi-mode/vi-mode.zsh
     ~/.zsh/plugins/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh
     ~/.zsh/plugins/zsh-autosuggestions/zsh-autosuggestions.zsh
-    ~/.zsh/plugins/p/p.plugin.zsh
-    ~/.zsh/plugins/fzf/fzf.plugin.zsh
+    ~/.zsh/plugins/p/p.zsh
+    ~/.zsh/plugins/fzf/fzf.zsh
     ~/.zsh/plugins/history/history.zsh
 )
 
