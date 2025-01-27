@@ -154,7 +154,7 @@ ZSH_HIGHLIGHT_STYLES[assign]=none
 # colored man pages
 export LESS_TERMCAP_mb=${fg_bold[red]}
 export LESS_TERMCAP_me=${reset_color}
-export LESS_TERMCAP_so=${fg_bold[white]}${bg[blue]}
+export LESS_TERMCAP_so=${fg_bold[white]}${bg_bold[black]}
 export LESS_TERMCAP_se=${reset_color}
 export LESS_TERMCAP_us=${fg_bold[green]}
 export LESS_TERMCAP_ue=${reset_color}
