@@ -1,6 +1,6 @@
 
 configuration {
-    modes: "window,run,calc,ssh";
+    modes: "window,run,ssh";
     font: "terminus 12";
 }
 timeout {
