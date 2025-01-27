@@ -7,6 +7,9 @@
 [submodule "vim/.vim/bundle/supertab"]
 	path = vim/.vim/bundle/supertab
 	url = https://github.com/ervandew/supertab.git
+[submodule "vim/.vim/bundle/vim-svelte"]
+	path = vim/.vim/bundle/vim-svelte
+	url = https://github.com/evanleck/vim-svelte.git
 [submodule "zsh/.zsh/plugins/zsh-vi-mode"]
 	path = zsh/.zsh/plugins/zsh-vi-mode
 	url = https://github.com/jeffreytse/zsh-vi-mode

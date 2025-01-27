@@ -1,0 +1,9 @@
+# history
+export SAVEHIST=10000
+export HISTSIZE=50000
+export HISTFILE=~/.zsh_history
+unsetopt share_history
+setopt extended_history
+setopt interactivecomments
+setopt hist_find_no_dups
+setopt inc_append_history

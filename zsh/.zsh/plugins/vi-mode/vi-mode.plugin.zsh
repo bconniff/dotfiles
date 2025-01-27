@@ -1,10 +1,9 @@
-set -o vi
 bindkey -v
 
-# allow vv to edit the command line (standard behaviour)
+# allow [ to edit the command line
 autoload -Uz edit-command-line
 zle -N edit-command-line
-bindkey -M visual v edit-command-line
+bindkey -M vicmd [ edit-command-line
 
 # allow ctrl-p, ctrl-n for navigate history (standard behaviour)
 bindkey '^P' up-history

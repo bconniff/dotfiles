@@ -151,6 +151,19 @@ ZSH_HIGHLIGHT_STYLES[dollar-double-quoted-argument]=fg=179
 ZSH_HIGHLIGHT_STYLES[back-double-quoted-argument]=fg=009
 ZSH_HIGHLIGHT_STYLES[assign]=none
 
-less_termcap[md]=${fg_bold[blue]}
+# colored man pages
+export LESS_TERMCAP_mb=${fg_bold[red]}
+export LESS_TERMCAP_me=${reset_color}
+export LESS_TERMCAP_so=${fg_bold[white]}${bg[blue]}
+export LESS_TERMCAP_se=${reset_color}
+export LESS_TERMCAP_us=${fg_bold[green]}
+export LESS_TERMCAP_ue=${reset_color}
+export LESS_TERMCAP_md=${fg_bold[blue]}
+export LESS='-FRX'
+export GROFF_NO_SGR=1
 
-LESS='-FRX'
+# colored ls
+export CLICOLOR=1
+export LSCOLORS=ExGxFxFxCxegedabagaced
+export LS_COLORS="di=1;34:ln=1;36:so=1;35:pi=1;35:ex=1;32:bd=34;46:cd=34;43:su=30;41:sg=30;46:tw=30;42:ow=34;43"
+zstyle ':completion:*:default' list-colors ${(s.:.)LS_COLORS}
