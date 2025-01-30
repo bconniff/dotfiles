@@ -1,9 +1,16 @@
 bindkey -v
 
-# allow [ to edit the command line
 autoload -Uz edit-command-line
+
+function __vi_edit_command_line {
+    zle deactivate-region
+    zle edit-command-line
+}
+
 zle -N edit-command-line
-bindkey -M vicmd [ edit-command-line
+zle -N __vi_edit_command_line
+
+bindkey -M visual v __vi_edit_command_line
 
 # allow ctrl-p, ctrl-n for navigate history (standard behaviour)
 bindkey '^P' up-history

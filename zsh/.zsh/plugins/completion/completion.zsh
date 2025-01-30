@@ -32,10 +32,10 @@ zstyle ':completion:*' use-cache yes
 zstyle ':completion:*' cache-path ~/.zcompcache
 
 # descriptions
-zstyle ':completion:*:descriptions' format "%F{black}%B[%f %d %F{black}]%f%b"
+zstyle ':completion:*:descriptions' format "%F{black}%B⎯⎯%f %d %F{black}⎯⎯%f%b"
 zstyle ':completion:*:messages' format '%d'
 zstyle ':completion:*:warnings' format "%F{red}%BNo matches%f%b"
-zstyle ':completion:*:corrections' format "%F{black}%B[%F{yellow} %e %d %F{black}]%f%b"
+zstyle ':completion:*:corrections' format "%F{black}%B⎯⎯%F{yellow} %e %d %F{black}⎯⎯%f%b"
 
 # handle escape key in menu
-bindkey -M menuselect '\e' 'accept-line && escape'
+bindkey -M menuselect -s '\e' '^M\e'
