@@ -152,13 +152,16 @@ ZSH_HIGHLIGHT_STYLES[back-double-quoted-argument]=fg=009
 ZSH_HIGHLIGHT_STYLES[assign]=none
 
 # colored man pages
-export LESS_TERMCAP_mb=${fg_bold[red]}
-export LESS_TERMCAP_me=${reset_color}
-export LESS_TERMCAP_so=${fg_bold[white]}${bg_bold[black]}
-export LESS_TERMCAP_se=${reset_color}
-export LESS_TERMCAP_us=${fg_bold[green]}
-export LESS_TERMCAP_ue=${reset_color}
-export LESS_TERMCAP_md=${fg_bold[blue]}
+export LESS_TERMCAP_mb=$'\e[1;31m'     # BLINK: bold red
+export LESS_TERMCAP_md=$'\e[1;34m'     # BOLD: bold blue
+export LESS_TERMCAP_me=$'\e[0m'        # reset
+
+export LESS_TERMCAP_so=$'\e[1;37;100m' # STANDOUT: bold white, bold black background
+export LESS_TERMCAP_se=$'\e[0m'        # reset
+
+export LESS_TERMCAP_us=$'\e[1;4;37m'   # UNDERLINE: bold white, underline
+export LESS_TERMCAP_ue=$'\e[0m'        # reset
+
 export LESS='-FRX'
 export GROFF_NO_SGR=1
 
@@ -166,4 +169,6 @@ export GROFF_NO_SGR=1
 export CLICOLOR=1
 export LSCOLORS=ExGxFxFxCxegedabagaced
 export LS_COLORS="di=1;34:ln=1;36:so=1;35:pi=1;35:ex=1;32:bd=34;46:cd=34;43:su=30;41:sg=30;46:tw=30;42:ow=34;43"
+
+# apply LS_COLORS to tab completion
 zstyle ':completion:*:default' list-colors ${(s.:.)LS_COLORS}
