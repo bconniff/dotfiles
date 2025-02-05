@@ -8,7 +8,7 @@ function __prompt__is_remote {
 
 function __prompt__host {
   if __prompt__is_remote; then
-    echo "%B%F{black}:%F{cyan}$(hostname -s)"
+    print -- "%B%F{black}:%F{cyan}$(hostname -s)"
   fi
 }
 
@@ -69,7 +69,7 @@ function __prompt__git_status {
       prompt="$prompt %B%F{cyan}(local)%f%b"
     fi
 
-    echo "$prompt"
+    print -- "$prompt"
   fi
 }
 
@@ -85,37 +85,37 @@ function __prompt__cwd {
     [[ "$cwd" = "$PWD" ]] || prefix="~"
   fi
 
-  declare short=$(echo "$cwd" | sed -E 's!([.]?[^/])[^/]*/!\1/!g')
-  echo "$prefix$short"
+  declare short=$(print -- "$cwd" | sed -E 's!([.]?[^/])[^/]*/!\1/!g')
+  print -- "$prefix$short"
 }
 
 function __prompt__error_code {
   local e=$?
-  (( $e )) && echo "%B%F{red}$e "
+  (( $e )) && print -- "%B%F{red}$e "
 }
 
 function __prompt__user {
   integer uid=$(id -u)
   if (( $UID )); then
-    echo "%B%F{green}%n"
+    print -- "%B%F{green}%n"
   else
-    echo "%B%F{red}%n"
+    print -- "%B%F{red}%n"
   fi
 }
 
 function __prompt__sigil {
   integer e=$?
   if (( $e )); then
-    echo "%B%F{red}*"
+    print -- "%B%F{red}*"
   elif (( $UID )); then
-    echo "%B%F{black}%%"
+    print -- "%B%F{black}%%"
   else
-    echo "%B%F{red}#"
+    print -- "%B%F{red}#"
   fi
 }
 
 function precmd {
-  print -rP $'\n''$(__prompt__error_code)$(__prompt__user)$(__prompt__host) %F{blue}$(__prompt__cwd)%f$(__prompt__git_status)%b%f'
+  print -rP -- $'\n''$(__prompt__error_code)$(__prompt__user)$(__prompt__host) %F{blue}$(__prompt__cwd)%f$(__prompt__git_status)%b%f'
 }
 
 PROMPT='$(__prompt__sigil)%b%f '

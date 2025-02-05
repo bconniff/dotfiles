@@ -14,11 +14,14 @@ setopt autocd
 # completion engines
 zstyle ':completion:*' completer _extensions _complete _approximate
 
+# autocorrection
+zstyle ':completion:*' max-errors 2
+
+# case sensitive first, case insensitive fallback
+zstyle ':completion:*' matcher-list '' 'm:{a-zA-Z}={A-Za-z}'
+
 # use menu selection
 zstyle ':completion:*' menu select
-
-# complete . and ..
-zstyle ':completion:*' special-dirs true
 
 # processes
 zstyle ':completion:*:*:kill:*:processes' list-colors '=(#b) #([0-9]#) ([0-9a-z-]#)*=01;34=0=01'
@@ -32,6 +35,7 @@ zstyle ':completion:*' use-cache yes
 zstyle ':completion:*' cache-path ~/.zcompcache
 
 # descriptions
+zstyle ':completion:*' group-name ''
 zstyle ':completion:*:descriptions' format "%F{black}%B⎯⎯%f %d %F{black}⎯⎯%f%b"
 zstyle ':completion:*:messages' format '%d'
 zstyle ':completion:*:warnings' format "%F{red}%BNo matches%f%b"
