@@ -13,13 +13,13 @@ endif
 
 " some characters that cannot be in a apex program (outside a string)
 syn match   apexError           "[\\@`]"
-syn match   apexError           "<<<\|\.\.\|<>\|||=\|&&=\|[^-]->\|\*\/"
+syn match   apexError           "<<<\|\.\.\|<>\|||=\|&&=\|[^-]->\|%\|\*\/"
 syn match   apexOK              "\.\.\."
 
 " keyword definitions
 syn keyword apexExternal        native package
-syn keyword apexError           goto const switch case
-syn keyword apexConditional     if else
+syn keyword apexError           goto const case
+syn keyword apexConditional     if else switch on when
 syn keyword apexRepeat          while for do
 syn keyword apexBoolean         true false
 syn keyword apexConstant        null
@@ -54,12 +54,6 @@ syn keyword apexDmlOperator     insert delete update upsert
 " The following cluster contains all apex groups except the contained ones
 syn cluster apexTop add=apexExternal,apexError,apexError,apexBranch,apexLabelRegion,apexLabel,apexConditional,apexRepeat,apexBoolean,apexConstant,apexTypedef,apexOperator,apexType,apexType,apexStatement,apexStorageClass,apexAssert,apexExceptions,apexMethodDecl,apexClassDecl,apexClassDecl,apexClassDecl,apexScopeDecl,apexError,apexUserLabel,apexLangObject,apexAnnotation
 
-" Comments
-syn keyword apexTodo             contained TODO FIXME XXX
-syn region  apexComment          start="/\*" end="\*/" contains=apexTodo,@Spell
-syn match   apexLineComment      "//.*" contains=apexTodo,@Spell
-syn cluster apexTop add=apexComment,apexLineComment
-
 " Strings and constants
 syn match   apexSpecialError     contained "\\."
 syn match   apexSpecialCharError contained "[^']"
@@ -70,15 +64,21 @@ syn match   apexNumber           "\(\<\d\+\.\d*\|\.\d\+\)\([eE][-+]\=\d\+\)\=[fF
 syn match   apexNumber           "\<\d\+[eE][-+]\=\d\+[fFdD]\=\>"
 syn match   apexNumber           "\<\d\+\([eE][-+]\=\d\+\)\=[fFdD]\>"
 
-" unicode characters
-syn match   apexSpecial          "\\u\d\{4\}"
-syn cluster apexTop add=apexString,apexNumber,apexSpecial,apexStringError
-
 syn match   apexFuncDef          contained +\<\(\crunAs\C\)\@![A-Za-z0-9]\+\>\(\s\|\n\)*\([;({]\)\@=+
 syn match   apexFuncSignature    +\<\(if\|for\|while\)\@!\([A-Za-z0-9]*\)\(\s\|\n\)*([^)]*)\(\s\|\n\)*{+ contains=apexFuncDef,apexPunctuation,apexType
 syn match   apexPropSignature    +\<\(get\|set\)\(\s\|\n\)*[;{]+ contains=apexFuncDef,apexPunctuation
-syn match   apexPunctuation      "[{}<>()\[\],.:;!=|&]"
+syn match   apexPunctuation      "[-?:/*+{}<>()\[\],.;!=|&]"
 syn cluster apexTop add=apexPunctuation,apexFuncSignature,apexPropSignature
+
+" Comments
+syn keyword apexTodo             contained TODO FIXME XXX
+syn region  apexComment          start="/\*" end="\*/" contains=apexTodo,@Spell
+syn match   apexLineComment      "//.*" contains=apexTodo,@Spell
+syn cluster apexTop add=apexComment,apexLineComment
+
+" unicode characters
+syn match   apexSpecial          "\\u\d\{4\}"
+syn cluster apexTop add=apexString,apexNumber,apexSpecial,apexStringError
 
 " apex soql statements
 syntax case ignore
