@@ -17,8 +17,8 @@ zstyle ':completion:*' completer _extensions _complete _approximate
 # autocorrection
 zstyle ':completion:*' max-errors 2
 
-# case sensitive first, case insensitive fallback
-zstyle ':completion:*' matcher-list '' 'm:{a-zA-Z}={A-Za-z}'
+# case sensitive -> case insensitive -> mid-word
+zstyle ':completion:*' matcher-list '' 'm:{a-zA-Z}={A-Za-z}' '+l:|=* r:|=*'
 
 # use menu selection
 zstyle ':completion:*' menu select
