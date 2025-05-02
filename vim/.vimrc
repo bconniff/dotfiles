@@ -74,7 +74,8 @@ endfun
 if !exists('g:loaded_fzf')
     let fzfdetect = [
         \ '/usr/share/doc/fzf/examples',
-        \ '/usr/local/opt/fzf'
+        \ '/usr/local/opt/fzf',
+        \ '/opt/homebrew/opt/fzf',
         \ ]
 
     for x in fzfdetect
