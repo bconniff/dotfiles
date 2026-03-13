@@ -132,6 +132,8 @@ hi def link apexSpaceError       Error
 
 let b:current_syntax = 'apex'
 
+setlocal iskeyword=@,48-57,_,192-255
+
 if main_syntax == 'apex'
 	unlet main_syntax
 endif
