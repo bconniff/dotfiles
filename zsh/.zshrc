@@ -6,6 +6,7 @@ declare -a plugins=(
     ~/.zsh/plugins/fzf/fzf.zsh
     ~/.zsh/plugins/history/history.zsh
     ~/.zsh/plugins/completion/completion.zsh
+    ~/.zsh/plugins/debian/debian.zsh
 )
 
 for x in $plugins; do
