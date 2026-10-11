@@ -1,15 +1,29 @@
-(( EUID == 0 )) && return 0
-[[ -x /usr/bin/apt ]] || return 0
+(( $+commands[apt] )) || return 0
+
+function whose {
+    (( $# != 1 )) && print "usage: whose [file]" >&2 && return 1
+    declare file=$1
+
+    if [[ ! -f $file ]]; then
+        file=$(whence $file 2>/dev/null) || return 1
+    fi
+
+    file=$(realpath $file)
+
+    dpkg -S $file
+}
 
 function apt {
-    local -a priv=(
+    local -a needs_sudo=(
         install reinstall remove purge autoremove autopurge
         update upgrade full-upgrade dist-upgrade satisfy
         clean autoclean edit-sources
     )
-    if (( ${priv[(Ie)$1]} )); then
-        sudo /usr/bin/apt $@
-    else
-        /usr/bin/apt $@
+
+    if (( EUID !=0 && ${needs_sudo[(Ie)$1]} )); then
+        sudo apt $@
+        return $?
     fi
+
+    command apt $@
 }

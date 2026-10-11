@@ -21,9 +21,9 @@ alias grep='grep --color'
 alias ls='ls --color'
 alias ll='ls -l'
 alias la='ls -A'
-alias agi='ag -i'
-alias agil='ag -il'
-alias agio='agi --noheading --nofilename --nonumber --nobreak -o'
+alias rgi='rg -i'
+alias rgil='rg -il'
+alias rgio='rg -i --no-heading --no-filename --no-line-number -o'
 alias ta='tmux a || tmux'
 
 # cdpath
