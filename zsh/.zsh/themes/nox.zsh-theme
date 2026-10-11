@@ -1,5 +1,7 @@
 # vim: set ft=zsh:
 
+declare __prompt_pre=''
+
 setopt prompt_subst
 
 function __prompt__is_remote {
@@ -115,7 +117,8 @@ function __prompt__sigil {
 }
 
 function precmd {
-  print -rP -- $'\n''$(__prompt__error_code)$(__prompt__user)$(__prompt__host) %F{blue}$(__prompt__cwd)%f$(__prompt__git_status)%b%f'
+  print -rP -- '$__prompt_pre$(__prompt__error_code)$(__prompt__user)$(__prompt__host) %F{blue}$(__prompt__cwd)%f$(__prompt__git_status)%b%f'
+  __prompt_pre=$'\n'
 }
 
 PROMPT='$(__prompt__sigil)%b%f '
