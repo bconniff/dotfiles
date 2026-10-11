@@ -22,3 +22,6 @@
 [submodule "vim/.vim/bundle/json5.vim"]
 	path = vim/.vim/bundle/json5.vim
 	url = https://github.com/gutenye/json5.vim
+[submodule "bg"]
+	path = bg
+	url = git@github.com:bconniff/bg.git
