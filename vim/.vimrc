@@ -5,7 +5,7 @@ set rtp+=~/.vim/bundle/vim-svelte
 set rtp+=~/.vim/bundle/salesforce-vim
 set rtp+=~/.vim/bundle/editorconfig-vim
 
-let $FZF_DEFAULT_COMMAND='ag -g "" || :'
+let $FZF_DEFAULT_COMMAND='rg --files'
 
 syntax on
 filetype plugin on
